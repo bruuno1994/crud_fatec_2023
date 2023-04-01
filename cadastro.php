@@ -1,10 +1,13 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
-$connect = new PDO("mysql:host=localhost;dbname=id19500520_db", "id19500520_user", "Xitn^Gbvn3V9Kg<)");
+    // Conexão com o Banco de Dados
+$connect = new PDO("mysql:host=localhost;dbname=id20421070_Mini_PI", "id20421070_bruno9537", "kps4015AB***");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 if ($received_data->action == 'fetchall') {
+
+    // Início da consulta ao Banco de Dados
     $query = "
  SELECT * FROM fatec_alunos 
  ORDER BY id DESC
@@ -16,12 +19,13 @@ if ($received_data->action == 'fetchall') {
     }
     echo json_encode($data);
 }
+    // Código em PHP responsável por inserir um novo aluno no Banco de Dados
 if ($received_data->action == 'insert') {
     $data = array(
         ':first_name' => $received_data->firstName,
         ':last_name' => $received_data->lastName
     );
-
+    // Código em SQL responsável por inserir um novo aluno no Banco de Dados
     $query = "
  INSERT INTO fatec_alunos 
  (first_name, last_name) 

@@ -11,12 +11,15 @@
 </head>
 
 <body>
+
+    <!--Início do bloco geral de informações-->
+
     <div class="container" id="searchApp">
         <br />
     <h3 align="center">
       <img src="https://site.fatecfranca.edu.br/images/logo-fatec-franca-15-anos.png" width=50% height=50%
         alt="logo fatec"><br /><br />
-      <strong>Busca de Alunos</strong>
+      <strong>Busca de Alunos</strong> <!--Título da Aplicação-->
     </h3>
     <br />
         <div class="panel panel-default">
@@ -39,7 +42,7 @@
                             <th>Last Name</th>
                         </tr>
                         <tr v-for="row in allData">
-                            <td>{{ row.first_name }}</td>
+                            <td>{{ row.first_name }}</td> <!--Verificador dos Nomes-->
                             <td>{{ row.last_name }}</td>
                         </tr>
                         <tr v-if="nodata">
@@ -53,7 +56,7 @@
 </body>
 
 </html>
-
+    <!--Início da Aplicação do Vue-->
 <script>
     var application = new Vue({
         el: '#searchApp',

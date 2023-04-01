@@ -1,14 +1,16 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');
+// Fazendo a conexão com o Banco de Dados
 
-$connect = new PDO("mysql:host=localhost;dbname=id19500520_db", "id19500520_user", "Xitn^Gbvn3V9Kg<)");
+$connect = new PDO("mysql:host=localhost;dbname=id20421070_mini_pi", "id20421070_bruno9537", "kps4015AB***");
 
 $received_data = json_decode(file_get_contents("php://input"));
 
 $data = array();
 
 if($received_data->query != '')
+// Consultando o Banco de Dados com fitro por nome
 {
 	$query = "
 	SELECT * FROM fatec_alunos 
@@ -18,6 +20,7 @@ if($received_data->query != '')
 	";
 }
 else
+// Consultando o Banco de Dados sem filtro por nome
 {
 	$query = "
 	SELECT * FROM fatec_alunos 

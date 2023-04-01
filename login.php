@@ -4,7 +4,7 @@ ob_start();
 
 session_start(); // Inicia a sessão
 
-require_once 'config.php';
+require_once 'config.php'; // Chama as informações armazenadas no arquivo de configurações
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email_login'];
@@ -14,11 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "SELECT id, nome FROM fatec_admin WHERE email='$email' AND senha=md5('$senha')";
     $result = mysqli_query($conn, $query);
 
+     // Redireciona para a página de dashboard
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['id'] = $row['id'];
         $_SESSION['nome'] = $row['nome'];
-        header('Location: dashboard.html'); // Redireciona para a página de dashboard
+        header('Location: dashboard.html');
     } else {
         echo '<script>alert("Email ou senha incorretos!")</script>'; 
         header("Location: index.html#paralogin");               

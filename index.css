@@ -1,4 +1,4 @@
-/* CSS reset */
+/* Código responsável por "resetar" as configurações de CSS padrão da página */
 *,
 *:before,
 *:after {
@@ -10,7 +10,7 @@
 body {
   margin: 10px;
 }
-
+/* remove as estilizações dos links */
 a {
   text-decoration: none;
 }
