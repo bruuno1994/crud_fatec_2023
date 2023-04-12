@@ -23,7 +23,9 @@ if ($received_data->action == 'fetchall') {
 if ($received_data->action == 'insert') {
     $data = array(
         ':first_name' => $received_data->firstName,
-        ':last_name' => $received_data->lastName
+        ':address' => $received_data->address,
+        ':class' => $received_data->class,
+        ':salary' => $received_data->salary
     );
     // Código em SQL responsável por inserir um novo professor no Banco de Dados
     $query = "
