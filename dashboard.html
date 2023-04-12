@@ -11,16 +11,18 @@
   </head>
   <body>
     <header>
-      <h1>Sistema Fatec Franca - 2023</h1>
+      <h1>Sistema Fatec Franca - 2023</h1> <!--Título da Aplicação-->
     </header>
     <main>
       <div class="container">
         <!--Botões que levam o usuário de uma página para outra-->
         <button @click="goToCadastroAlunos">Cadastro de Alunos</button>
         <button @click="goToBuscaAlunos">Busca de Alunos</button>
+        <button @click="goToBuscaProfessores">Busca de Professores</button>
+        <button @click="goToCadastroProfessores">Cadastro de Professores</button>
       </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script> <!--Link do Vue-->
   </body>
 </html>
 
@@ -34,6 +36,12 @@
       goToBuscaAlunos() {
         window.open("buscaAlunos.html", "_blank");
       },
+      goToBuscaProfessores() {
+        window.open("buscaProfessores.html", "_blank");
+      },
+      goToCadastroProfessores() {
+        window.open("cadastroProfessores.html", "_blank")
+      }
     },
   });
 </script>

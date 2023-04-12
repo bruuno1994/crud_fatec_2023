@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 
     // Conexão com o Banco de Dados
-$connect = new PDO("mysql:host=localhost;dbname=id20421070_Mini_PI", "id20421070_bruno9537", "kps4015AB***");
+$connect = new PDO("mysql:host=localhost;dbname=id20421070_mini_pi", "id20421070_bruno9537", "kps4015AB***");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 if ($received_data->action == 'fetchall') {
